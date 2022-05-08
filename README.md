@@ -1,21 +1,9 @@
-How to run
-===
+Java Run Jersey3 in Jetty as Jar Demo
+====================================
 
-`gradle clean jettyRun`
+这里面有一个天坑：jersey是jax的一个实现，而jax从2.x升级到3.x后，包名由`javax.ws.rs`变成了`jakarta.ws.rs`，导致定义的resource不生效而始终找不到原因。
 
-Then visit `http://localhost:8080/rest/hello/aaa`
-
-Note
-===
-
-`java.ws.rs`
-
-<https://docs.oracle.com/javaee/6/api/javax/ws/rs/package-summary.html>
-
-[Jersey](https://jersey.java.net) is an implementation of JSR-RS
-
-Thanks
-====
-
-The code is mostly from <http://www.mkyong.com/webservices/jax-rs/jersey-hello-world-example/>
-
+```
+mvn clean package
+java -jar target/demo.jar
+```
