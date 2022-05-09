@@ -1,5 +1,6 @@
 package example;
 
+import org.eclipse.jetty.server.Server;
 import org.glassfish.jersey.jetty.JettyHttpContainerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 
@@ -7,12 +8,16 @@ import java.net.URI;
 
 public class Main {
 
-    public static void main(String[] args) {
-        // scan packages
-        final ResourceConfig config = new ResourceConfig(HelloResource.class);
+    public static String BASE_URI = "http://localhost:8080/";
 
+    public static void main(String[] args) {
+        startServer();
+    }
+
+    public static Server startServer() {
+        final ResourceConfig config = new ResourceConfig(HelloResource.class);
         // Start Jetty Server
-        JettyHttpContainerFactory.createServer(URI.create("http://localhost:8080/"), config);
+        return JettyHttpContainerFactory.createServer(URI.create(BASE_URI), config);
     }
 
 

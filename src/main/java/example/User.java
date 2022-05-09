@@ -1,6 +1,6 @@
 package example;
 
 public class User {
-    int id;
-    String name;
+    public int id;
+    public String name;
 }

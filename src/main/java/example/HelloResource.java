@@ -1,10 +1,11 @@
 package example;
 
 import jakarta.ws.rs.GET;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +18,10 @@ public class HelloResource {
         return "Jersey Jetty example.";
     }
 
-    @Path("/{username}")
-    @GET
+    @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public User hello(@PathParam("username") String name) {
-
-        User obj = new User();
-        obj.id = 0;
-        obj.name = "user0";
-        return obj;
+    public User hello(User user) {
+        return user;
     }
 
     @Path("/all")
