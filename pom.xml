@@ -55,6 +55,12 @@
             <artifactId>jersey-media-json-jackson</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20220320</version>
+        </dependency>
+
         <!-- Need this to hide warning
         <dependency>
             <groupId>jakarta.activation</groupId>
