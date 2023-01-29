@@ -9,3 +9,5 @@ Java Maven Jersey3 Test Demo
 mvn clean package
 java -jar target/demo.jar
 ```
+
+Then visit: http://localhost:8080/hello
